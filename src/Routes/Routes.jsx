@@ -4,6 +4,9 @@ import Home from "../Pages/Home/Home"
 import Blogs from "../Pages/Blogs/Blogs"
 import Blog from "../Pages/Blogs/Blog"
 import Bookmarks from "../Pages/Bookmarks/Bookmarks"
+import Content from "../Components/Content/Content"
+import Author from "../Components/Author/Author"
+import Profile from "../Components/Profile/Profile"
 
 
 export const router = createBrowserRouter([
@@ -23,7 +26,22 @@ export const router = createBrowserRouter([
             {
                 path: '/blog/:id',
                 element: <Blog />,
-                loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`)
+                loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`),
+                children:[
+                    {
+                        index:true,
+                        element:<Content/>,
+                        loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`),
+                    },
+                    {
+                        path:'author',
+                        element:<Author/>
+                    },
+                    {
+                        path:'profile',
+                        element:<Profile/>
+                    }
+                ]
             },
             {
                 path: '/bookmarks',

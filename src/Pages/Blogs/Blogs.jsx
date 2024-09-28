@@ -8,7 +8,7 @@ const Blogs = () => {
   return (
     <div>
       <section className="">
-        <div className="container max-w-7xl p-6 mx-auto space-y-6 sm:space-y-12">
+        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 ">
             <img src={blogs[0]?.cover_image && fourOfFourImg} alt="img" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 shadow-lg" />
             <div className="p-6 space-y-2 lg:col-span-5">
