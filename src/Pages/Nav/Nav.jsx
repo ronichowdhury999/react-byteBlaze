@@ -8,7 +8,7 @@ const Nav = () => {
     useEffect(() => {
         localStorage.setItem('theme', theme)
         const localTheme = localStorage.getItem('theme')
-        document.querySelector('html').setAttribute('data-theme',localTheme)
+        document.querySelector('html').setAttribute('data-theme', localTheme)
     }, [theme])
 
     const handelToggleThems = e => {
@@ -18,7 +18,6 @@ const Nav = () => {
             setTheme('light')
         }
     }
-    console.log(theme);
     return (
         <div>
             <div className="navbar bg-base-100 shadow-lg px-4 space-x-8">
