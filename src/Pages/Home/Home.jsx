@@ -3,9 +3,9 @@ import Hero from "../../Components/Hero/Hero"
 import wave from '../../assets/wave.svg'
 const Home = () => {
   return (
-    <div className="relative flex flex-col justify-center items-center min-h-[calc(100vh-120px)]">
+    <div className="md:mt-20 mt-8">
      <Hero/>
-     <img className="w-full absolute bottom-0" src={wave} alt="" />
+     <img className="w-full border-gray-700" src={wave} alt="" />
     </div>
   )
 }

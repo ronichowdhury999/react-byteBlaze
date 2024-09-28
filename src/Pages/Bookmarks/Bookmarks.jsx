@@ -1,8 +1,10 @@
 
 const Bookmarks = () => {
-  return (
-    <div>Bookmarks</div>
-  )
+    return (
+       <div>
+        <h1>bookmarks</h1>
+       </div>
+    )
 }
 
 export default Bookmarks
