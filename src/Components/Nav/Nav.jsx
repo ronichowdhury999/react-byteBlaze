@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import { Link, NavLink } from "react-router-dom"
 
 
 const Nav = () => {
@@ -19,16 +20,17 @@ const Nav = () => {
         }
     }
     return (
-        <div>
-            <div className="navbar bg-base-100 shadow-lg px-4 space-x-8">
+        <div className="shadow-lg">
+            <div className="navbar bg-base-100 justify-between  lg:px-4">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-2xl gap-0 text-secondary font-bold">Byte<span className="text-primary">Blaze</span></a>
+                    <Link to='/' className="btn btn-ghost lg:text-2xl text-4xl gap-0 text-secondary font-bold">Byte<span className="text-primary">Blaze</span></Link>
                 </div>
-                <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1">
-                        <li className="font-bold"><a>Home</a></li>
-                        <li className="font-bold text-primary"><a>Blogs</a></li>
-                        <li className="font-bold"><a>Bookmarks</a></li>
+                <div className="">
+                    <ul className="menu md:menu-horizontal px-1">
+                        <li className="font-bold"><NavLink to='/' className={({isActive,isPending})=>isPending ? 'pending' : isActive ? 'text-purple-500' : ''}>Home</NavLink></li>
+                        <li className="font-bold"><NavLink className={({isActive,isPending})=>isPending ? 'pending' : isActive ? 'text-purple-500' : ''} to='/blogs'>Blogs</NavLink></li>
+                        <li className="font-bold"><NavLink className={({isActive,isPending})=>isPending ? 'pending' : isActive ? 'text-purple-500' : ''} to='/bookmarks'>Bookmarks</NavLink></li>
+                        
                     </ul>
                     <label className="grid cursor-pointer place-items-center">
                         <input
